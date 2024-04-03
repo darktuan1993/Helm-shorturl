@@ -5,9 +5,9 @@
 replicaCount: 2
 
 image:
-  repository: bachdangtuan/short-url-dev
+  repository: bachdangtuan/short-url-prod
   pullPolicy: IfNotPresent
-  tag: "1.0.0"
+  tag: "1.0.1"
 
 imagePullSecrets: []
 nameOverride: ""
