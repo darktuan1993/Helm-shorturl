@@ -12,6 +12,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: {{ .Values.podLabels.app}}
+            name: short-url-svc
             port:
               number: 3000
