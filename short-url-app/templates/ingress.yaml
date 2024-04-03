@@ -3,15 +3,15 @@ kind: Ingress
 metadata:
   name: {{ .Chart.Name }}
 spec:
-  ingressClassName: nginx
+  ingressClassName: {{ .Values.ingress.className}}
   rules:
-  - host: short-url.rancher.local
+  - host: {{ .Values.ingress.hosts.host}}
     http:
       paths:
-      - path: /
-        pathType: ImplementationSpecific
+      - path: {{ .Values.ingress.hosts.path}}
+        pathType: {{ .Values.ingress.hosts.pathType}}
         backend:
           service:
-            name: short-url-svc
+            name: {{ .Values.service.name}}
             port:
-              number: 3000
+              number: {{ .Values.service.port}}
