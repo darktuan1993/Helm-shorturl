@@ -41,7 +41,7 @@ ingress:
   annotations:
     {}
   hosts:
-    host: chart-example.local
+    host: short-url.rancher.local
     paths:
     path: /
     pathType: ImplementationSpecific
