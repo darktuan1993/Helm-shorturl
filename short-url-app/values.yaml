@@ -20,7 +20,7 @@ serviceAccount:
 
 podAnnotations: {}
 podLabels:
-  app: short-url-app
+  app: short-url-dev
 
 # podSecurityContext:
 #   {}
@@ -30,7 +30,7 @@ podLabels:
 
 
 service:
-  name: short-url-svc
+  name: short-url-svc-dev
   type: ClusterIP
   port: 3000
   protocol: TCP
@@ -41,7 +41,7 @@ ingress:
   annotations:
     {}
   hosts:
-    host: short-url.rancher.local
+    host: short-url-dev.rancher.local
     paths:
     path: /
     pathType: ImplementationSpecific
