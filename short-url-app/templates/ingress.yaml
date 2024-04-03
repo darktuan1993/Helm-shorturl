@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: short-url.rancher.local
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: short-url-svc
+            port:
+              number: 3000
