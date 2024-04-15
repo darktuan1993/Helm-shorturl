@@ -41,7 +41,7 @@ ingress:
   annotations:
     {}
   hosts:
-    host: short-url.rancher.local
+    host: zurl-short-dev.ivirse.com
     paths:
     path: /
     pathType: ImplementationSpecific
