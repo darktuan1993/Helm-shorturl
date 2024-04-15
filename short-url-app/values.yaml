@@ -19,7 +19,7 @@ podLabels:
   app: short-url-prod
 
 service:
-  name: short-url-svc
+  name: short-url-svc-production
   type: ClusterIP
   port: 3000
   protocol: TCP
