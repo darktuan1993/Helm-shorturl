@@ -5,9 +5,9 @@
 replicaCount: 2
 
 image:
-  repository: bachdangtuan/short-url-prod
+  repository: bachdangtuan/short-url-dev
   pullPolicy: IfNotPresent
-  tag: "1.0.2"
+  tag: "1.0.4"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -20,7 +20,7 @@ serviceAccount:
 
 podAnnotations: {}
 podLabels:
-  app: short-url-app
+  app: short-url-dev
 
 # podSecurityContext:
 #   {}
@@ -30,7 +30,7 @@ podLabels:
 
 
 service:
-  name: short-url-svc
+  name: short-url-svc-dev
   type: ClusterIP
   port: 3000
   protocol: TCP
@@ -41,7 +41,7 @@ ingress:
   annotations:
     {}
   hosts:
-    host: zurl-short-dev.ivirse.com
+    host: short-url-dev.rancher.local
     paths:
     path: /
     pathType: ImplementationSpecific
