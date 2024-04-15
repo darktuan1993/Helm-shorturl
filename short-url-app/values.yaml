@@ -22,15 +22,8 @@ podAnnotations: {}
 podLabels:
   app: short-url-dev
 
-# podSecurityContext:
-#   {}
-
-# securityContext:
-#   {}
-
-
 service:
-  name: short-url-svc-dev
+  name: short-url-svc
   type: ClusterIP
   port: 3000
   protocol: TCP
@@ -57,27 +50,3 @@ readinessProbe:
   httpGet:
     path: /
     port: http
-
-# autoscaling:
-#   enabled: false
-#   minReplicas: 1
-#   maxReplicas: 100
-#   targetCPUUtilizationPercentage: 80
-
-# volumes: []
-# # - name: foo
-# #   secret:
-# #     secretName: mysecret
-# #     optional: false
-
-# # Additional volumeMounts on the output Deployment definition.
-# volumeMounts: []
-# # - name: foo
-# #   mountPath: "/etc/foo"
-# #   readOnly: true
-
-# nodeSelector: {}
-
-# tolerations: []
-
-# affinity: {}
