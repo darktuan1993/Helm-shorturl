@@ -27,8 +27,7 @@ service:
 ingress:
   enabled: false
   className: "nginx"
-  annotations:
-    {}
+  annotations: {}
   hosts:
     host: zurl-short-prod.ivirse.com
     paths:
@@ -36,8 +35,7 @@ ingress:
     pathType: ImplementationSpecific
   tls: []
 
-resources:
-  {}
+resources: {}
 livenessProbe:
   httpGet:
     path: /
@@ -46,3 +44,19 @@ readinessProbe:
   httpGet:
     path: /
     port: http
+
+# HPA
+hpa:
+  maxReplicas: 10
+  metrics:
+    - resource:
+        name: cpu
+        target:
+          averageUtilization: 50
+          type: Utilization
+      type: Resource
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: short-url-app
