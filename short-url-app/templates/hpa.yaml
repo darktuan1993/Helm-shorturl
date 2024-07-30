@@ -10,8 +10,8 @@ spec:
         name: {{ .resource.name }}
         target:
           averageUtilization: {{ .resource.target.averageUtilization }}
-          type: {{ .resource.target.Resource }}
-      type: {{ .type }}
+          type: Utilization
+      type: Resource
      {{- end }}
   minReplicas: {{ .Values.hpa.type}}
   scaleTargetRef:
