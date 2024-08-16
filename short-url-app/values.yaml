@@ -24,17 +24,6 @@ service:
   port: 3000
   protocol: TCP
 
-ingress:
-  enabled: false
-  className: "nginx"
-  annotations: {}
-  hosts:
-    host: zurl-short-prod.ivirse.com
-    paths:
-    path: /
-    pathType: ImplementationSpecific
-  tls: []
-
 resources: {}
 livenessProbe:
   httpGet:
